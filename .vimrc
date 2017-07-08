@@ -29,6 +29,8 @@ function! SetTagsPath()
 
     " tags 
     if filereadable("./tags") 
+        " first call UpdateCtags
+        call UpdateCtags()
         execute ":set tags+=" . reldir . "/tags"
     endif
     
